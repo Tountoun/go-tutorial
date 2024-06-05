@@ -5,6 +5,8 @@ import (
 	"main/clients"
 	"main/products"
 	"main/students"
+	"golang.org/x/tour/tree"
+	"main/functions"
 )
 
 func main() {
@@ -23,4 +25,9 @@ func main() {
 	client.SetPurse(&purse)
 	client.BuyProduct(haojue)
 	fmt.Println("Amount purse", client.Purse.Amount)
+
+	t1 := tree.New(5) // generate a tree with values k, 2k, .. 10k (k=5)
+	t2 :=  tree.New(2)
+
+	fmt.Println(functions.Same(t1, t2))
 }
