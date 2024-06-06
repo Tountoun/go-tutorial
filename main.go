@@ -3,10 +3,13 @@ package main
 import (
 	"fmt"
 	"main/clients"
+	"main/functions"
 	"main/products"
 	"main/students"
+	"main/weather"
+	"os"
+
 	"golang.org/x/tour/tree"
-	"main/functions"
 )
 
 func main() {
@@ -30,4 +33,10 @@ func main() {
 	t2 :=  tree.New(2)
 
 	fmt.Println(functions.Same(t1, t2))
+
+	key := os.Getenv("OWM_API_KEY")
+	
+	w := weather.Current("K", "fr", key)
+	w.CurrentByName("Lome")
+	fmt.Println(w.Timezone)
 }

@@ -2,4 +2,7 @@ module main
 
 go 1.19
 
-require golang.org/x/tour v0.1.0 // indirect
+require (
+	github.com/briandowns/openweathermap v0.19.0 // indirect
+	golang.org/x/tour v0.1.0 // indirect
+)
